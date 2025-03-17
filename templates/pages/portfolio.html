@@ -1,12 +1,96 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+        }
+        .nav {
+            background: #333;
+            padding: 10px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .nav a:hover {
+            color: #f4a261;
+        }
+        .portfolio-img {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .projects img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is a simple portfolio page created using Django.</p>
+
+    <div class="nav">
+        <a href="{% url 'portfolio:index' %}">Home</a>
+        <a href="{% url 'portfolio:index' %}">Portfolio</a>
+        <a href="#">Contact</a>  <!-- Replace with real contact page if available -->
+    </div>
+
+    <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is a sample portfolio page built with Django.</p>
+        <img src="{% static 'assets/portfolioSs.jpg' %}" alt="Portfolio Image" class="portfolio-img">
+    </div>
+
+    <div class="container">
+        <h2>My Projects</h2>
+        <p>Here are some of the projects I've worked on:</p>
+        <div class="projects">
+            <img src="https://i0.wp.com/inbetweendrafts.com/wp-content/uploads/2025/02/04_08.jpg?fit=1280%2C720&ssl=1" alt="Project 1">
+            <img src="https://qph.cf2.quoracdn.net/main-qimg-2647e22639fc63ba54a7fd4fa4705c5f-lq" alt="Project 2">
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 My Portfolio. All rights reserved.
+    </footer>
+
 </body>
 </html>
